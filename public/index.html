@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Coordination</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Task Coordination</h1>
+
+    <section id="functional-team">
+        <h2>Functional Team (Requirements and Testing)</h2>
+        <table id="functionalTable">
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Project</th>
+                    <th>Task Name</th>
+                    <th>Task Description</th>
+                    <th>Task Documentation</th>
+                    <th>Responsible Person</th>
+                    <th>Internal Deadline</th>
+                    <th>User Deadline</th>
+                    <th>Status</th>
+                    <th>Changing Status Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="functionalList">
+                <!-- Existing and dynamically added rows will go here -->
+            </tbody>
+        </table>
+        <h3>Add New Task</h3>
+        <form id="functionalForm" class="task-form" enctype="multipart/form-data">
+            <input type="hidden" name="taskId">
+            <select name="project" required>
+                <option value="UMQR">UMQR</option>
+                <option value="Tanmiah">Tanmiah</option>
+            </select>
+            <input type="text" name="taskName" placeholder="Task Name" required>
+            <input type="text" name="taskDescription" placeholder="Task Description" required>
+            <input type="file" name="taskDocumentation" required>
+            <select name="responsiblePerson" required>
+                <option value="Reem Ali">Reem Ali</option>
+                <option value="Tarek Elghalban">Tarek Elghalban</option>
+                <option value="Rosylah">Rosylah</option>
+                <option value="Sherif Abdo">Sherif Abdo</option>
+                <option value="Hamdy">Hamdy</option>
+                <option value="Mohie Mondy">Mohie Mondy</option>
+                <option value="Islam Okasha">Islam Okasha</option>
+            </select>
+            <input type="date" name="internalDeadline" required>
+            <input type="date" name="userDeadline" required>
+            <input type="text" name="status" placeholder="Status" required>
+            <input type="text" name="changingStatusDate" placeholder="Changing Status Date" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <section id="technical-team">
+        <h2>Technical Team (Technical Implementation)</h2>
+        <table id="technicalTable">
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Functional Team Task ID</th>
+                    <th>Responsible Person</th>
+                    <th>Estimate Deadline</th>
+                    <th>Status</th>
+                    <th>Changing Status Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="technicalList">
+                <!-- Existing and dynamically added rows will go here -->
+            </tbody>
+        </table>
+        <h3>Add New Task</h3>
+        <form id="technicalForm" class="task-form">
+            <input type="hidden" name="taskId">
+            <select name="functionalTaskId" required>
+                <!-- Options will be populated dynamically -->
+            </select>
+            <select name="responsiblePerson" required>
+                <option value="Mahmoud Morsy">Mahmoud Morsy</option>
+                <option value="Ahmed Abo Zaid">Ahmed Abo Zaid</option>
+                <option value="Nour">Nour</option>
+            </select>
+            <input type="date" name="estimateDeadline" required>
+            <input type="text" name="status" placeholder="Status" required>
+            <input type="text" name="changingStatusDate" placeholder="Changing Status Date" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
